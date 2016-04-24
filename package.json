@@ -1,0 +1,19 @@
+{
+  "name": "channel-feed",
+  "version": "1.0.0",
+  "description": "Kaplan Coding Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliciakw/channel-feed.git"
+  },
+  "author": "Alicia Willett",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliciakw/channel-feed/issues"
+  },
+  "homepage": "https://github.com/aliciakw/channel-feed#readme"
+}
