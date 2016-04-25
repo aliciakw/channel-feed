@@ -7,27 +7,32 @@ $secondary-text-color: #666;
 $font-stack: "Helvetica Neue", Helvetica, sans-serif;
 
 body {
-  color: $primary-text-color;
+  color: $secondary-text-color;
   background: $background-color;
   font: 100% $font-stack;
 }
+h1 { color: $primary-text-color; }
+
 .container {
   margin: 20px 10%;
-}
-.daily-entries {
-  h4 { color: $secondary-text-color; }
 }
 .channel-entry {
   background: $white;
   border: 1px solid $border-color;
-  padding: 15px;
-  h4 {
-    font-size: 14px;
-    color: $primary-text-color;
-    margin: 0;}
-  p {
-    font-size: 12px;
-    line-height: 20px;
-    margin: 8px 0 0 0;
-    color: $secondary-text-color; }
+  padding: 10px 15px 15px 15px;
+  display: inline-block;
 }
+.entry-data {
+  font-size: 12px;
+  line-height: 20px;
+  margin: 8px 0 0 0;
+  padding: 0 3px;
+  float: left;
+  display: inline-block;
+  img {
+    width: 24px; margin-right: 10px; float:left; border-radius: 12px;
+  }
+}
+.entry-blurb { width: 55%; }
+.daily-entries h4 { color: $secondary-text-color; }
+.entry-title { font-weight: bold; font-size: 14px; color: $primary-text-color;}

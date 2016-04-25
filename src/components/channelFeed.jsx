@@ -40,6 +40,7 @@ var ChannelFeed = React.createClass({
     });
     return (
       <div className="container">
+        <h1>Upcoming Classes in this Channel</h1>
         {entriesByDay}
       </div>
     )

@@ -125,6 +125,11 @@
 	    return _react2.default.createElement(
 	      'div',
 	      { className: 'container' },
+	      _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Upcoming Classes in this Channel'
+	      ),
 	      entriesByDay
 	    );
 	  }
@@ -3700,7 +3705,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _entry = __webpack_require__(279);
+	var _entry = __webpack_require__(34);
 
 	var _entry2 = _interopRequireDefault(_entry);
 
@@ -3735,7 +3740,75 @@
 	exports.default = DailyEntries;
 
 /***/ },
-/* 34 */,
+/* 34 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(2);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Entry = _react2.default.createClass({
+	  displayName: "Entry",
+
+	  render: function render() {
+	    var entry = this.props.entry;
+	    return _react2.default.createElement(
+	      "div",
+	      { className: "channel-entry" },
+	      _react2.default.createElement(
+	        "div",
+	        { className: "entry-data entry-icon" },
+	        _react2.default.createElement("img", { src: entry.subjectPhotoUrl })
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "entry-data entry-blurb" },
+	        _react2.default.createElement(
+	          "span",
+	          { className: "entry-title" },
+	          entry.title
+	        ),
+	        _react2.default.createElement("br", null),
+	        entry.description
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "entry-data entry-inst" },
+	        _react2.default.createElement("img", { className: "pull-right", src: entry.instructorPhotoUrl }),
+	        _react2.default.createElement(
+	          "span",
+	          null,
+	          _react2.default.createElement(
+	            "strong",
+	            null,
+	            entry.instructorName
+	          )
+	        )
+	      ),
+	      _react2.default.createElement(
+	        "div",
+	        { className: "entry-data" },
+	        _react2.default.createElement(
+	          "strong",
+	          null,
+	          entry.time
+	        )
+	      )
+	    );
+	  }
+	});
+
+	exports.default = Entry;
+
+/***/ },
 /* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -17639,7 +17712,7 @@
 
 
 	// module
-	exports.push([module.id, "body {\n  color: #333;\n  background: #f7f7fa;\n  font: 100% \"Helvetica Neue\", Helvetica, sans-serif; }\n\n.container {\n  margin: 20px 10%; }\n\n.daily-entries h4 {\n  color: #666; }\n\n.channel-entry {\n  background: #fff;\n  border: 1px solid #ebebee;\n  padding: 15px; }\n  .channel-entry h4 {\n    font-size: 14px;\n    color: #333;\n    margin: 0; }\n  .channel-entry p {\n    font-size: 12px;\n    line-height: 20px;\n    margin: 8px 0 0 0;\n    color: #666; }\n", ""]);
+	exports.push([module.id, "body {\n  color: #666;\n  background: #f7f7fa;\n  font: 100% \"Helvetica Neue\", Helvetica, sans-serif; }\n\nh1 {\n  color: #333; }\n\n.container {\n  margin: 20px 10%; }\n\n.channel-entry {\n  background: #fff;\n  border: 1px solid #ebebee;\n  padding: 10px 15px 15px 15px;\n  display: inline-block; }\n\n.entry-data {\n  font-size: 12px;\n  line-height: 20px;\n  margin: 8px 0 0 0;\n  padding: 0 3px;\n  float: left;\n  display: inline-block; }\n  .entry-data img {\n    width: 24px;\n    margin-right: 10px;\n    float: left;\n    border-radius: 12px; }\n\n.entry-blurb {\n  width: 55%; }\n\n.daily-entries h4 {\n  color: #666; }\n\n.entry-title {\n  font-weight: bold;\n  font-size: 14px;\n  color: #333; }\n", ""]);
 
 	// exports
 
@@ -34360,61 +34433,6 @@
 	"use strict";
 
 	module.exports = "[\n  {\n    \"title\":\"Nulla convallis dolor quis erat.\",\n    \"description\":\"Sed hendrerit luctus finibus. Sed justo dui, vulputate ac suscipit condimentum, porttitor sed dolor. Ut eu justo at metus dapibus facilisis a quis libero. Integer lectus turpis, pretium a tincidunt.\",\n    \"instructorName\":\"Erat Libero\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=C&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=C&w=60&h=60\",\n    \"time\":\"2016-01-03 22:00:00\"\n  },\n  {\n    \"title\":\"Pellentesque sagittis porttitor tincidunt. Sed.\",\n    \"description\":\"Curabitur eu velit vitae massa varius rhoncus. Proin eu ligula venenatis, consequat libero maximus, varius lorem. Morbi a dignissim nibh. Suspendisse eget ornare nunc, sollicitudin lacinia elit. Sed in volutpat.\",\n    \"instructorName\":\"Scelerisque Via\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=D&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=B&w=60&h=60\",\n    \"time\":\"2016-01-01 21:00:00\"\n  },\n  {\n    \"title\":\"Phasellus a interdum purus, non.\",\n    \"description\":\"Pellentesque bibendum, nulla tincidunt consequat rutrum, sem lacus mattis quam, cursus semper lectus nibh id diam. Duis ullamcorper, odio ac blandit pretium, purus est varius ante, eu aliquam elit tortor.\",\n    \"instructorName\":\"Cras Ac\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=B&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=A&w=60&h=60\",\n    \"time\":\"2016-01-04 21:00:00\"\n  },\n  {\n    \"title\":\"Donec viverra, magna ut porttitor\",\n    \"description\":\"Maecenas finibus ullamcorper aliquam. Integer eros neque, placerat id convallis non, rutrum tempor nisi. In venenatis vulputate feugiat. Vivamus porttitor, odio sit amet volutpat maximus, magna est maximus sapien, et.\",\n    \"instructorName\":\"Posuere Una\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=E&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=A&w=60&h=60\",\n    \"time\":\"2016-01-03 20:00:00\"\n  },\n  {\n    \"title\":\"In quis elit ut ipsum.\",\n    \"description\":\"Praesent fermentum tortor non arcu imperdiet, egestas vestibulum augue tempus. Nunc sollicitudin tincidunt metus placerat luctus. Praesent at finibus nibh. Donec auctor feugiat hendrerit. Nulla massa augue, mattis quis fermentum.\",\n    \"instructorName\":\"Aliquam Nisl\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=D&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=C&w=60&h=60\",\n    \"time\":\"2016-01-05 19:00:00\"\n  },\n  {\n    \"title\":\"Ut consequat risus id lacus.\",\n    \"description\":\"Nunc hendrerit blandit elit sed rhoncus. Sed interdum tempus enim vel ornare. Nulla facilisi. Morbi rhoncus turpis in justo sollicitudin, sit amet varius magna fringilla. Fusce porta magna neque, nec.\",\n    \"instructorName\":\"Vestibulum Ante\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=B&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=A&w=60&h=60\",\n    \"time\":\"2016-01-05 22:00:00\"\n  },\n  {\n    \"title\":\"Sed mauris dui, ornare ut.\",\n    \"description\":\"Vivamus pulvinar, nisl fermentum cursus tincidunt, tortor justo dignissim metus, consectetur facilisis nulla tellus ut nisi. Cras in lorem neque. Vivamus sed odio in libero finibus consequat. Maecenas facilisis nisi.\",\n    \"instructorName\":\"Integer Laciana\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=E&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=B&w=60&h=60\",\n    \"time\":\"2016-01-01 20:00:00\"\n  },\n  {\n    \"title\":\"In hac habitasse platea dictumst.\",\n    \"description\":\"Suspendisse consequat egestas posuere. Integer diam diam, gravida ac condimentum a, vulputate et quam. Fusce eleifend leo sed diam cursus, nec ultrices orci luctus. Vivamus eget eros aliquam, suscipit sapien.\",\n    \"instructorName\":\"Ipsum Primis\",\n    \"instructorPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=A&w=60&h=60\",\n    \"subjectPhotoUrl\":\"https://placeholdit.imgix.net/~text?txtsize=34&txt=D&w=60&h=60\",\n    \"time\":\"2016-01-03 21:00:00\"\n  }\n]\n";
-
-/***/ },
-/* 279 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(2);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Entry = _react2.default.createClass({
-	  displayName: "Entry",
-
-	  render: function render() {
-	    var entry = this.props.entry;
-	    return _react2.default.createElement(
-	      "div",
-	      { className: "channel-entry" },
-	      _react2.default.createElement(
-	        "h4",
-	        null,
-	        entry.title
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        entry.description
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        entry.instructorName
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        entry.instructorPhotoUrl
-	      ),
-	      _react2.default.createElement(
-	        "p",
-	        null,
-	        entry.subjectPhotoUrl
-	      )
-	    );
-	  }
-	});
-
-	exports.default = Entry;
 
 /***/ }
 /******/ ]);
