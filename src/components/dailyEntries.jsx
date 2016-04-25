@@ -1,18 +1,19 @@
 import React from 'react';
 import Entry from './entry.jsx';
-import createFragment from 'react-addons-create-fragment';
+import moment from 'moment';
 
 var DailyEntries = React.createClass({
   render: function () {
-    var k = 0,
-        entries = this.props.entries.map(function (entry) {
-          k++;
-          return <Entry key={k} entry={entry} />
-        });
+    var date = moment(this.props.date, 'YYYYMMDD').format('ddd, MMMM DD, YYYY'),
+        entries = this.props.entries,
+        startTimes = Object.keys(entries).map(Number).sort();
+    var sortedEntries = startTimes.map(function (time) {
+      return <Entry key={time} entry={entries[time]} />
+    });
     return (
       <div className="daily-entries">
-        <h4>{this.props.date}</h4>
-        {entries}
+        <h5>{date}</h5>
+        {sortedEntries}
       </div>
     )
   }

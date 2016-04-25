@@ -6,37 +6,38 @@ var ChannelFeed = React.createClass({
   getInitialState: function () {
     var raw = this.props.data,
         days = [],
-        entries = {},
+        startTimes= {},
+        sortedEntries = {},
         entry,
+        dateTime,
         day,
         time;
     for (var i=0; i < raw.length; i++) {
       entry = raw[i];
-      time = Date.parse(entry.time);
-      day = moment(time).format('ddd, MMMM DD, YYYY');
-      if(days.indexOf(day) === -1) {
-        days.push(day);
-        entries[day] = [];
+      dateTime = entry.time.split(" ");
+      day = dateTime[0].replace(/\-/g, '');
+      time = dateTime[1].replace(/\:/g, '');
+      if (sortedEntries.hasOwnProperty(day) !== true){
+       sortedEntries[day] = {};
       }
-      entries[day].push({
+      sortedEntries[day][time] = {
         title: entry.title,
         description: entry.description,
         instructorName: entry.instructorName,
         instructorPhotoUrl: entry.instructorPhotoUrl,
-        subjectPhotoUrl: entry.subjectPhotoUrl
-      });
+        subjectPhotoUrl: entry.subjectPhotoUrl,
+        duration: moment(entry.time).format('h:mm A') + " - " + moment(entry.time).add(1,'h').format('h:mm A') + ' EDT'
+      };
     };
     return {
-      days: days,
-      entries: entries,
+      days: Object.keys(sortedEntries).map(Number).sort(),
+      entries: sortedEntries
     }
   },
   render: function () {
-    var k = 0,
-        entries = this.state.entries;
-    var entriesByDay = this.state.days.map(function (date) {
-      k++;
-      return <DailyEntries key={k} date={date} entries={entries[date]}/>;
+    var entries = this.state.entries,
+        entriesByDay = this.state.days.map(function(date) {
+          return <DailyEntries key={date} date={date} entries={entries[date]}/>;
     });
     return (
       <div className="container">
