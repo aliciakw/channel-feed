@@ -1,0 +1,33 @@
+$background-color: #f7f7fa;
+$border-color: #ebebee;
+$white: #fff;
+
+$primary-text-color: #333;
+$secondary-text-color: #666;
+$font-stack: "Helvetica Neue", Helvetica, sans-serif;
+
+body {
+  color: $primary-text-color;
+  background: $background-color;
+  font: 100% $font-stack;
+}
+.container {
+  margin: 20px 10%;
+}
+.daily-entries {
+  h4 { color: $secondary-text-color; }
+}
+.channel-entry {
+  background: $white;
+  border: 1px solid $border-color;
+  padding: 15px;
+  h4 {
+    font-size: 14px;
+    color: $primary-text-color;
+    margin: 0;}
+  p {
+    font-size: 12px;
+    line-height: 20px;
+    margin: 8px 0 0 0;
+    color: $secondary-text-color; }
+}
