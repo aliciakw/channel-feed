@@ -1,40 +1,31 @@
 $background-color: #f7f7fa;
+$footer-color: #7898AF;
 $border-color: #ebebee;
 $white: #fff;
-
 $primary-text-color: #333;
 $secondary-text-color: #666;
 $font-stack: "Helvetica Neue", Helvetica, sans-serif;
 
-body {
-  color: $secondary-text-color;
-  background: $background-color;
-  font: 100% $font-stack;
-}
-.pull-right { float: right !important;}
+body { color: $secondary-text-color; background: $background-color; font: 100% $font-stack; margin: 0;}
 h1 { color: $primary-text-color; }
-
-.container {
-  margin: 20px 10%;
-}
-.channel-entry {
-  background: $white;
-  border: 1px solid $border-color;
-  padding: 6px 15px 18px 15px;
-  margin-top: -3px;
-  display: inline-block;
-}
+footer {
+  height: 60px; margin-top:40px; text-align: center; background: $footer-color; border: 1px solid darken($footer-color, 10%);
+  p { color:$background-color; font-size: 11px; margin-top:20px;}
+  a {
+    color: mix($background-color, $footer-color); text-decoration: none;
+    -webkit-transition: opacity .5s ease-in-out; -moz-transition: color .25s ease-in-out; -o-transition: color .25s ease-in-out; -ms-transition: color .25s ease-in-out; transition: color .25s ease-in-out;
+    &:hover, &:active, &:focus { color:$secondary-text-color; }
+  }
+ }
+.container { margin: 20px 10%; }
+.channel-entry { background: $white; border: 1px solid $border-color; padding: 6px 15px 18px 15px; margin-top: -3px; display: inline-block; }
 .entry-data {
-  font-size: 11px;
-  line-height: 20px;
-  margin: 8px 0 0 0;
-  padding: 0 3px;
-  float: left;
-  display: inline-block;
+  font-size: 11px; line-height: 20px; margin: 8px 0 0 0; float: left; display: inline-block;
   img {
     width: 22px; margin: 3px 10px 0 0; float:left; border-radius: 11px;
   }
 }
-.entry-blurb { width: 55%; }
+.entry-blurb { width: 55%; min-width: 200px;}
+.entry-time, .entry-inst { float: right; width:20%; min-width: 100px;}
 .daily-entries h5 { color: $secondary-text-color; margin: 20px 0 14px 0;}
 .entry-title { font-weight: bold; font-size: 14px; color: $primary-text-color;}
