@@ -2,7 +2,7 @@
 A one page web app for listing channel sessions.
 
 ####Get up and Running
-Before you can run the application, be sure to:  
+Before running the application, be sure to:  
 `npm install` to install all dependencies.  
 `webpack` to compile all assets in the /app --> /builds/bundle.js.
 
