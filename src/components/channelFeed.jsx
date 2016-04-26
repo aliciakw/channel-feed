@@ -7,7 +7,8 @@ var ChannelFeed = React.createClass({
   getInitialState: function () {
     return {
       days: [],
-      entries: {}
+      entries: {},
+      msg: "Nothing in this channel."
     }
   },
   componentDidMount: function () {
@@ -36,8 +37,7 @@ var ChannelFeed = React.createClass({
     }
 
     this.serverRequest = $.get(url, function (result) {
-      var channelEntries = sortEntries(result);
-      this.setState(channelEntries);
+      this.setState(sortEntries(result));
     }.bind(this));
 
   },
@@ -46,10 +46,11 @@ var ChannelFeed = React.createClass({
         entriesByDay = this.state.days.map(function(date) {
           return <DailyEntries key={date} date={date} entries={entries[date]}/>;
     });
+    var content = entriesByDay.length ? entriesByDay : this.state.msg;
     return (
       <div className="container">
         <h1>Upcoming Classes in this Channel</h1>
-        {entriesByDay}
+        {content}
       </div>
     )
   }
